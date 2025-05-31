@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import TodoReducer from "./TodoReducer";
+import TodoReducer from "./todoReducer";
 
 const allReducer = combineReducers({
   TodoReducer,
