@@ -22,7 +22,7 @@ function FormInputTodo() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex-center gap-x-2">
+      <form onSubmit={handleSubmit} className="flex-center gap-x-2 text-[16px]">
         <input
           type="text"
           name="content"
