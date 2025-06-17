@@ -22,13 +22,13 @@ function FormInputTodo() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex-center gap-x-2 text-[16px]">
+      <form onSubmit={handleSubmit} className="flex-center gap-x-2">
         <input
           type="text"
           name="content"
           autoComplete="off"
           placeholder="Type something..."
-          className="rounded-lg outline-none border-2 p-3 border-gray-400 xs:text-sm sm:text-md w-full placeholder:opacity-50"
+          className="rounded-lg outline-none border-2 p-3 border-gray-400 text-md w-full placeholder:opacity-50"
           ref={inputRef}
         />
         <button
