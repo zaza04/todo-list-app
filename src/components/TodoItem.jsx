@@ -1,16 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { completedTodo, deleteTodo } from "../store/redux/actions/todoAction";
+import { toggleCompleted, deleteTodo } from "../features/todos/TodoSlice";
 
 function TodoItem() {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.TodoReducer);
+  const todos = useSelector((state) => state.todo);
 
-  const handleCompleted = (id) => {
-    dispatch(completedTodo(id));
+  // console.log(todos);
+
+  const handleCompleted = (todoId) => {
+    dispatch(toggleCompleted(todoId));
   };
 
-  const handleDelete = (id) => {
-    dispatch(deleteTodo(id));
+  const handleDelete = (todoId) => {
+    dispatch(deleteTodo(todoId));
   };
 
   // tính sô lượng task chưa hoàn thành (uncompleted)
@@ -119,7 +121,7 @@ function TodoItem() {
                       (item.completed ? "line-through opacity-50" : "")
                     }
                   >
-                    {item.title}
+                    {item.name}
                   </div>
                   <div
                     className="flex-center"

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/redux/actions/todoAction";
+import { addTodo } from "../features/todos/TodoSlice";
 import { useEffect, useRef } from "react";
 
 function FormInputTodo() {
@@ -13,9 +13,9 @@ function FormInputTodo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
+
     if (value !== "") {
       dispatch(addTodo(value));
-      inputRef.current.focus();
       inputRef.current.value = "";
     }
   };
